@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Natascha Haberl">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Results</title>
+</head>
+
+<body>
+    <div id="form-container">
+        <h1>Results from Form</h1>
+        <hr>
+        <div id="results">
+        </div>
+        <p style="font-size: 70%; text-align: center;"><a href="../index.html">Return to form</a></p>
+    </div>
+    <script>
+        //function to display all labels and input values from form
+        const resultsList = document.getElementById("results")
+        new URLSearchParams(window.location.search).forEach((name, value) => {
+            resultsList.append(`${value}: ${name}`)
+            resultsList.append(document.createElement('br'))
+            resultsList.append(document.createElement('br'))
+        })
+    </script>
+</body>
+
+</html>
